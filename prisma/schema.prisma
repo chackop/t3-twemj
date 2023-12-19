@@ -12,9 +12,11 @@ datasource db {
 
 model Post {
     id        Int      @id @default(autoincrement())
-    name      String
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
 
-    @@index([name])
+    title    String
+    authorId String
+
+    @@index([authorId])
 }
